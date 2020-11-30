@@ -712,7 +712,6 @@ footer p {
   background-color: var(--white-color);
 }
 
-
 .form-modal > h3 {
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -756,6 +755,7 @@ footer p {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.input:hover,
 .input:focus {
   border-color: var(--accent-color);
 }
@@ -767,6 +767,7 @@ footer p {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.input:hover + svg,
 .input:focus + svg {
   fill: var(--accent-color);
 }
@@ -776,7 +777,7 @@ footer p {
   margin-bottom: 10px;
 }
 
-.form-modal-nav > textarea {
+.form-modal-nav textarea {
   width: 100%;
   height: 120px;
   padding: 12px 16px;
@@ -787,9 +788,9 @@ footer p {
   outline: none;
 }
 
-.form-modal-nav > textarea:focus {
+.form-modal-nav textarea:hover,
+.form-modal-nav textarea:focus {
   border-color: var(--accent-color);
-  color: var(--accent-color);
 }
 
 textarea::placeholder {
@@ -802,6 +803,35 @@ textarea::placeholder {
   resize: none;
 
   color: rgba(117, 117, 117, 0.5);
+}
+
+.icon-check {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--title-text-color);
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.checkbox:checked + .icon-check {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  background-image: url("../images/icon-check.svg");
+  background-size: contain;
+  background-origin: border-box;
 }
 
 .cheked {
@@ -821,6 +851,8 @@ textarea::placeholder {
 }
 
 .cheked > label {
+  display: flex;
+  align-items: center;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -906,6 +938,7 @@ textarea::placeholder {
   border-radius: 4px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   background-color: var(--dark-background-color);
+  color: var(--white-color);
 }
 
 .footer-form-navigation > input::placeholder {
